@@ -440,6 +440,7 @@ module StateMachine
         # Gets the db default for the machine's attribute
         def owner_class_attribute_default
           if owner_class.connected? && owner_class.table_exists? && column = owner_class.columns_hash[attribute.to_s]
+            return column.default.to_i if !column.default.nil? && column.cast_type.to_s =~ /integer/i
             column.default
           end
         end
