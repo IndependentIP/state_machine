@@ -15,7 +15,9 @@ Gem::Specification.new do |s|
   s.test_files        = s.files.grep(/^test\//)
   s.rdoc_options      = %w(--line-numbers --inline-source --title state_machine --main README.md)
   s.extra_rdoc_files  = %w(README.md CHANGELOG.md LICENSE)
-  
+
+  s.metadata['allowed_push_host'] = 'http://gems.fuga.com:9292'
+
   s.add_development_dependency("rake")
   s.add_development_dependency("simplecov")
   s.add_development_dependency("appraisal", "~> 0.5.0")
